@@ -8,8 +8,10 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1
-  # GET /posts/1.json
+  # GET /posts/1.json 
   def show
+    @comment = @post.comments.build
+    @last_comments = @post.comments.last(5)
   end
 
   # GET /posts/new
